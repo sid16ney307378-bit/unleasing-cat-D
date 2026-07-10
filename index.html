@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Unleasing Cat >:D</title>
+  <style>
+    body { margin:0; font-family: Arial, Helvetica, sans-serif; display:flex; flex-direction:column; min-height:100vh; }
+    header { text-align:center; padding:20px; }
+    main { flex:1; display:flex; align-items:center; justify-content:center; }
+    .content { text-align:center; }
+    .youtube-link {
+      display:inline-block;
+      margin-top:8px;
+      padding:0;
+      background:none;
+      border:none;
+      text-decoration:none;
+    }
+    .youtube-link img {
+      width:120px;
+      height:auto;
+      display:block;
+      margin:0 auto;
+      cursor:pointer;
+    }
+    img { max-width:90vw; max-height:60vh; display:block; margin:0 auto; }
+    .play-btn {
+      position:fixed; left:50%; transform:translateX(-50%); bottom:20px;
+      padding:10px 16px; font-size:16px; border:1px solid #0066cc; border-radius:4px; background:#fff; color:#0066cc;
+      cursor:pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hello, (proceeds to unleasing cat >:D)</h1>
+    <a class="youtube-link" href="https://www.youtube.com/@sidney_o-m2n" target="_blank" rel="noopener noreferrer">
+      <img src="o.png" alt="YouTube button">
+    </a>
+  </header>
+  <main>
+    <div class="content">
+      <!-- Replace "cat.png" with the actual image filename in this folder if different -->
+      <img id="catImage" src="img.png" alt="Cat image in folder">
+    </div>
+  </main>
+
+  <!-- Replace "sound.mp3" with the actual audio filename in this folder if different -->
+  <audio id="meow" src="deja-vu.mp3" preload="auto"></audio>
+  <button class="play-btn" id="playBtn">Play Sound</button>
+
+  <script>
+    const btn = document.getElementById('playBtn');
+    const audio = document.getElementById('meow');
+    btn.addEventListener('click', ()=>{
+      audio.currentTime = 0;
+      audio.play().catch(()=>{
+        // in some browsers, playback must be initiated by a user gesture; clicking the button satisfies that
+      });
+    });
+  </script>
+</body>
+</html>
